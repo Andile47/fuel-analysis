@@ -25,11 +25,10 @@ and what does that mean for South African fuel costs?
    shows the combined effect of both forces. [CHECK: add one specific comparison from
    your `monthly` table, with the months and values.]
 
-**Extreme months:** March 2026: Brent rose sharply after the war that began on 28 February 2026
+**Extreme months:**March 2026:** Brent rose sharply after the war that began on 28 February 2026
 disrupted shipping through the Strait of Hormuz. The EIA reports front-month Brent
 rising from $61 at the start of the year to $118 at the end of March
 ([EIA, 7 April 2026](https://www.eia.gov/Todayinenergy/detail.php?id=67424)).
-
 
 **Answer to the question:** in this data, oil and the rand did not show a reliable
 month-to-month relationship outside the 2020 shock. South African fuel costs are exposed
@@ -89,3 +88,10 @@ Daily Brent crude futures (`BZ=F`) and USD/ZAR (`ZAR=X`) from Yahoo Finance via 
 Built as a learning project with guidance
 from an AI assistant (Claude). I wrote and ran the code, checked the outputs against
 the charts, and made the cleaning and interpretation decisions.
+
+  ## How to run
+  1. `pip install -r requirements.txt`
+  2. Run `step1_load.py` to `step4_changes.py` in order.
+  Results may differ slightly from the README, because yfinance downloads
+  the latest data each time.
+  
