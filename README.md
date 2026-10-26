@@ -10,8 +10,9 @@ Daily Brent crude (BZ=F) and USD/ZAR (ZAR=X) from Yahoo Finance via the
 yfinance Python library, downloaded 25 October 2026.
 
 ## Progress
-[x] Step 1: load data
-[x] Step 2: clean and convert to monthly averages
-[x] Step 3: charts and correlation of price levels
-[ ] Step 4: correlation of monthly changes
-[ ] Findings and limitations
+
+- [x] Step 1: load data
+- [x] Step 2: clean and convert to monthly averages
+- [x] Step 3: charts and correlation of price levels
+- [X] Step 4: correlation of monthly changes
+- [ ] Findings and limitations
