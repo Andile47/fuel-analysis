@@ -25,9 +25,11 @@ and what does that mean for South African fuel costs?
    shows the combined effect of both forces. [CHECK: add one specific comparison from
    your `monthly` table, with the months and values.]
 
-**Extreme months:** the largest monthly oil fall was March 2020 (-39.2%, with the rand
-weakening 10.7%). The largest rise was March 2026 (+43.7%, with the rand weakening 4.4%).
-[CHECK: add a sourced one-line explanation for each, with links.]
+**Extreme months:**March 2026:** Brent rose sharply after the war that began on 28 February 2026
+disrupted shipping through the Strait of Hormuz. The EIA reports front-month Brent
+rising from $61 at the start of the year to $118 at the end of March
+([EIA, 7 April 2026](https://www.eia.gov/Todayinenergy/detail.php?id=67424)).
+
 
 **Answer to the question:** in this data, oil and the rand did not show a reliable
 month-to-month relationship outside the 2020 shock. South African fuel costs are exposed
