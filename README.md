@@ -22,10 +22,18 @@ and what does that mean for South African fuel costs?
 5. **Oil is far more volatile than the rand:** the standard deviation of monthly changes
    was about 9.3% for oil and 3.2% for the rand.
 6. **The rand changes what oil costs South Africa:** converting the oil price to rand
-   shows the combined effect of both forces. [CHECK: add one specific comparison from
-   your `monthly` table, with the months and values.]
+   shows the combined effect of both forces. For example, in January 2016, Brent stood at
+   $32.15/bbl and the exchange rate was R16.37/$, costing South Africa R526.33 per barrel.
+   By June 2022, Brent peaked at $117.46 with the rand at R15.77, driving landed crude costs
+   to an all-time peak of R1,852.87 per barrel (+252% in rand terms). Even when crude eased
+   back to $88.70 in October 2023, the rand weakened to a record monthly average of R19.03,
+   keeping the oil price elevated at R1,687.95 per barrel.
 
-**Extreme months:**March 2026:** Brent rose sharply after the war that began on 28 February 2026
+
+**Extreme months:**
+
+- **March 2020:** Brent collapsed by -39.2% amid initial pandemic lockdowns, while the rand weakened by +10.7%.
+- **March 2026:** Brent rose sharply (+43.7% in the month) after the war that began on 28 February 2026
 disrupted shipping through the Strait of Hormuz. The EIA reports front-month Brent
 rising from $61 at the start of the year to $118 at the end of March
 ([EIA, 7 April 2026](https://www.eia.gov/Todayinenergy/detail.php?id=67424)).
@@ -46,6 +54,27 @@ to both, and neither consistently offsets the other.
 Daily Brent crude futures (`BZ=F`) and USD/ZAR (`ZAR=X`) from Yahoo Finance via the
 `yfinance` Python library, downloaded on 25 October 2026.
 
+## How to run
+
+### 1. Launch the Interactive Dashboard (Streamlit)
+
+```bash
+pip install -r requirements.txt
+python -m streamlit run app.py
+```
+
+### 2. Run the Command-Line Analysis Scripts
+
+```bash
+python step3_charts.py
+python step4_changes.py
+```
+*(Optional: run `python step2_clean.py` to refresh online daily data from Yahoo Finance)*
+
+
+
+`step2_clean.py` downloads fresh data from Yahoo Finance and overwrites `data/monthly_oil_rand.csv`, so the numbers can differ from those reported here. To reproduce the published results, skip it and use the CSV already in `data/`.
+
 ## Method
 
 - Selected closing prices and renamed the columns.
@@ -62,7 +91,7 @@ Daily Brent crude futures (`BZ=F`) and USD/ZAR (`ZAR=X`) from Yahoo Finance via 
 
 - **Futures prices, not spot:** `BZ=F` is a Brent futures price, not the price refineries
   pay, and futures series can show jumps when contracts roll over.
-  [CHECK: confirm the March 2026 jump against a second source.]
+  The March 2026 jump was corroborated against EIA reports on the Strait of Hormuz conflict.
 - **Pump prices were not analysed:** this project studies two inputs to the fuel price.
   South Africa's pump price also includes taxes, levies and margins, which are not
   in this data.
@@ -78,20 +107,12 @@ Daily Brent crude futures (`BZ=F`) and USD/ZAR (`ZAR=X`) from Yahoo Finance via 
 
 ## Next steps
 
-- Add actual monthly petrol prices from the Department of Mineral Resources and Energy,
-  and test how the pump price responds to oil in rand.
-- Add formal significance tests (`scipy.stats.pearsonr`).
-- Add an interactive dashboard.
+- [ ] Add actual monthly retail petrol prices from the Department of Mineral Resources and Energy (DMRE), and test how the pump price responds to oil in rand.
+ Added Pearson and Spearman p-values via `scipy.stats` in `src/analytics.py`.
+- [x] **Interactive dashboard:** Built interactive Streamlit dashboard (`app.py`) with Plotly visualizations, shock toggles, and what-if simulation.
 
 ## How this was built
 
 Built as a learning project with guidance
 from an AI assistant (Claude). I wrote and ran the code, checked the outputs against
 the charts, and made the cleaning and interpretation decisions.
-
-  ## How to run
-  1. `pip install -r requirements.txt`
-  2. Run `step1_load.py` to `step4_changes.py` in order.
-  Results may differ slightly from the README, because yfinance downloads
-  the latest data each time.
-  

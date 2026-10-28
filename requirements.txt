@@ -1,4 +1,6 @@
-  pandas
-  matplotlib
-  yfinance
-  
+pandas
+matplotlib
+yfinance
+streamlit
+plotly
+scipy

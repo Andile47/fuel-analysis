@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 
 # Load and drop the partial month, as before
 monthly = pd.read_csv("data/monthly_oil_rand.csv", index_col=0, parse_dates=True)
-monthly = monthly.iloc[:-1]
+LAST_COMPLETE_MONTH = "2026-09-01"   # October 2026 was incomplete when the data was downloaded
+monthly = monthly.loc[:LAST_COMPLETE_MONTH]
 
 # Monthly percentage change for each series
 changes = monthly.pct_change().dropna() * 100

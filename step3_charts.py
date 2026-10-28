@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 # 1. Load the file you saved in step 2
 monthly = pd.read_csv("data/monthly_oil_rand.csv", index_col=0, parse_dates=True)
 
-# 2. Drop the partial month (October 2026). Remove this line if you decided to keep it.
-monthly = monthly.iloc[:-1]
+LAST_COMPLETE_MONTH = "2026-09-01"   # October 2026 was incomplete when the data was downloaded
+monthly = monthly.loc[:LAST_COMPLETE_MONTH]
 
 print(monthly.shape)
 print(monthly.tail(3))
