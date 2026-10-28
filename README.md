@@ -1,5 +1,9 @@
 # Fuel Drivers Analysis
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](http://localhost:8501/)
+
+> **Live Dashboard Demo**: [http://localhost:8501/](http://localhost:8501/) *(when running locally via `python -m streamlit run app.py`)*
+
 How have the oil price and the rand exchange rate moved together since 2016,
 and what does that mean for South African fuel costs?
 
